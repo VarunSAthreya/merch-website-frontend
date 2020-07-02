@@ -39,7 +39,7 @@ const Menu = ({ history }) => (
                     className="nav-link"
                     to="/user/dashboard"
                 >
-                    Dashboard
+                    U. Dashboard
                 </Link>
             </li>
 
