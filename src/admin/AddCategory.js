@@ -25,7 +25,7 @@ const AddCategory = () => {
     };
 
     const onSubmit = (event) => {
-        event.preventDefalut();
+        event.preventDefault();
         setError("");
         setSuccess(false);
 
@@ -52,7 +52,7 @@ const AddCategory = () => {
 
     const warningMessage = () => {
         if (error) {
-            return <h4 className="text-warning"> Failed to create category</h4>;
+            return <h4 className="text-danger"> Failed to create category</h4>;
         }
     };
 
