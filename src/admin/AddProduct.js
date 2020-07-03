@@ -161,7 +161,7 @@ const AddProduct = () => {
                     onChange={handleChange("stock")}
                     type="number"
                     className="form-control"
-                    placeholder="Quantity"
+                    placeholder="Stock"
                     value={stock}
                 />
             </div>
