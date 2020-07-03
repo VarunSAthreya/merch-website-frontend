@@ -13,7 +13,10 @@ const AddCategory = () => {
 
     const goBack = () => (
         <div className="mt-5">
-            <Link className="btn btn-sm btn-info mb-3" to="/admin/dashboard">
+            <Link
+                className="btn btn-sm btn-info mb-3 rounded"
+                to="/admin/dashboard"
+            >
                 Admin Home
             </Link>
         </div>
@@ -69,7 +72,10 @@ const AddCategory = () => {
                     required
                     placeholder="For Ex. : Summer"
                 />
-                <button onClick={onSubmit} className="btn btn-outline-info">
+                <button
+                    onClick={onSubmit}
+                    className="btn btn-outline-info rounded"
+                >
                     Create Category
                 </button>
             </div>

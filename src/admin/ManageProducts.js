@@ -37,7 +37,7 @@ const ManageProducts = () => {
     return (
         <Base title="Welcome admin" description="Manage products here">
             <h2 className="mb-4">All products:</h2>
-            <Link className="btn btn-info" to={`/admin/dashboard`}>
+            <Link className="btn btn-info rounded" to={`/admin/dashboard`}>
                 <span className="">Admin Home</span>
             </Link>
             <div className="row">
@@ -56,7 +56,7 @@ const ManageProducts = () => {
                                 </div>
                                 <div className="col-4">
                                     <Link
-                                        className="btn btn-success"
+                                        className="btn btn-success rounded"
                                         to={`/admin/product/update/${product._id}`}
                                     >
                                         <span className="">Update</span>
@@ -67,7 +67,7 @@ const ManageProducts = () => {
                                         onClick={() => {
                                             deleteThisProduct(product._id);
                                         }}
-                                        className="btn btn-danger"
+                                        className="btn btn-danger rounded"
                                     >
                                         Delete
                                     </button>
