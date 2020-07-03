@@ -43,10 +43,9 @@ const ManageProducts = () => {
             <div className="row">
                 <div className="col-12">
                     <h2 className="text-center text-white my-3">
-                        Total 3 products
+                        Total {products.length} products
                     </h2>
                     {products.map((product, index) => {
-                        console.log("yoyo");
                         return (
                             <div key={index} className="row text-center mb-2 ">
                                 <div className="col-4">
