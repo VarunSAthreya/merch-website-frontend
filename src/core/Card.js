@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
+import { Redirect } from "react-router-dom";
+import { addItemToCart } from "./helper/CartHelper";
 
-const Card = ({ product, addToCart = true, removeFromCart = false }) => {
-    const cardTitle = product ? product.name : "Default Title";
-    const cardDescription = product
+const Card = ({ product, addtoCart = true, removeFromCart = false }) => {
+    const [redirect, setRedirect] = useState(false);
+    const [count, setCount] = useState(product.count);
+
+    const cartTitle = product ? product.name : "A photo from pexels";
+    const cartDescrption = product
         ? product.description
-        : "Default Description";
-    const cardPrice = product ? product.price : "Default price";
+        : "Default description";
+    const cartPrice = product ? product.price : "DEFAULT";
 
-    const showAddToCart = (addToCart) => {
+    const addProductToCart = () => {
+        addItemToCart(product, () => setRedirect(true));
+    };
+
+    const getARedirect = (redirect) => {
+        if (redirect) {
+            return <Redirect to="/cart" />;
+        }
+    };
+
+    const showAddToCart = (addtoCart) => {
         return (
-            addToCart && (
+            addtoCart && (
                 <button
-                    onClick={() => {}}
-                    className="btn btn-block btn-outline-success mt-2 mb-2"
+                    onClick={addProductToCart}
+                    className="btn btn-block btn-outline-success mt-2 mb-2 rounded"
                 >
                     Add to Cart
                 </button>
@@ -26,29 +41,27 @@ const Card = ({ product, addToCart = true, removeFromCart = false }) => {
             removeFromCart && (
                 <button
                     onClick={() => {}}
-                    className="btn btn-block btn-outline-danger mt-2 mb-2"
+                    className="btn btn-block btn-outline-danger mt-2 mb-2 rounded"
                 >
                     Remove from cart
                 </button>
             )
         );
     };
-
     return (
         <div className="card text-white bg-dark border border-info ">
-            <div className="card-header lead">{cardTitle}</div>
+            <div className="card-header lead">{cartTitle}</div>
             <div className="card-body">
-                <div className="rounded border border-success p-2">
-                    <ImageHelper product={product} />
-                </div>
-                <p className="lead bg-success font-weight-normal text-wrap">
-                    {cardDescription}
+                {getARedirect(redirect)}
+                <ImageHelper product={product} />
+                <p className="lead bg-success font-weight-normal text-wrap rounded">
+                    {cartDescrption}
                 </p>
                 <p className="btn btn-success rounded  btn-sm px-4">
-                    $ {cardPrice}
+                    $ {cartPrice}
                 </p>
                 <div className="row">
-                    <div className="col-12">{showAddToCart(addToCart)}</div>
+                    <div className="col-12">{showAddToCart(addtoCart)}</div>
                     <div className="col-12">
                         {showRemoveFromCart(removeFromCart)}
                     </div>
