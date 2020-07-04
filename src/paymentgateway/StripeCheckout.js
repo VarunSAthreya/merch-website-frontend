@@ -55,7 +55,7 @@ const StripeCheckout = ({
     const showStripeButton = () => {
         return isAutheticated() ? (
             <StripeGateway
-                stripeKey="pk_test_51H1Cw9EUqn7XzXigmB7RKLTzZHEtdR8Kpv3sLlDQOAwckuVaWWzHbD23KJBxQtgm7i9mh1AwWW485a4MpcE4L30V00tDFpi8qK"
+                stripeKey={process.env.REACT_APP_STRIPE_KEY}
                 token={makePayment}
                 amount={getFinalPrice() * 100}
                 name="Buy T-shirts"
