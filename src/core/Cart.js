@@ -4,6 +4,7 @@ import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/cartHelper";
+import Payment from "./Payment";
 
 const Cart = () => {
     const [products, setProducts] = useState([]);
@@ -43,12 +44,14 @@ const Cart = () => {
             <div className="row text-center">
                 <div className="col-6">
                     {products.length > 0 ? (
-                        loadAllProducts()
+                        loadAllProducts(products)
                     ) : (
                         <h3>No products in the cart</h3>
                     )}
                 </div>
-                <div className="col-6">Payment Section</div>
+                <div className="col-6">
+                    <Payment setReload={setReload} products={products} />
+                </div>
             </div>
         </Base>
     );
