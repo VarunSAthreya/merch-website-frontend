@@ -1,7 +1,7 @@
 # Merch Selling Website Frontend
 
 Frontend for a Merch selling website using:
-* [React](https://reactjs.org/)
+* [ReactJS](https://reactjs.org/)
 
 ## Getting started
 
