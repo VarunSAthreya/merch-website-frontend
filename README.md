@@ -1,5 +1,7 @@
 # Merch Selling Website Frontend
 
+[![CodeFactor](https://www.codefactor.io/repository/github/varunsathreya/merch-website-frontend/badge)](https://www.codefactor.io/repository/github/varunsathreya/merch-website-frontend)
+
 Frontend for a Merch selling website using:
 * [ReactJS](https://reactjs.org/)
 
