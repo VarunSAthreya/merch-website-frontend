@@ -5,6 +5,8 @@
 Frontend for a Merch selling website using:
 * [ReactJS](https://reactjs.org/)
 
+For backend code click [here](https://github.com/VarunSAthreya/merch-website-backend)
+
 ## Getting started
 
 ### Installation
